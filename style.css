@@ -37,6 +37,7 @@ nav{
     border-radius: 5px;
     padding: 15px 30px;
     color: #ffff;
+    border-color: linear-gradient(90deg, #EB1656 28.48%, #ae1b76 72.96%);
 }
 .btn:hover{
     background: linear-gradient(90deg, #eb165663 28.48%, #ae1b767a 72.96%);
@@ -53,7 +54,7 @@ main{
     width: 400px;
 }
 .hero-sec h2{
-    font-size: 50px;
+    font-size: 40px;
     background: linear-gradient(270deg, #D53443 59.64%, #141C95 75.94%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -98,4 +99,30 @@ footer .last{
     text-align: center;
     letter-spacing: 1em;
     color: #fff;
+}
+
+@media only screen and (max-width: 891px){
+    .bar{
+        flex-direction: column;
+    }
+    .menu{
+        margin-bottom: 20px;
+    }
+
+    .hero-sec{
+        flex-direction: column;
+    }
+    .hero-sec p, h1, h2{
+        text-align: center;
+    }
+
+    .hero-sec .btn{
+        margin-left: 100px;
+    }
+    footer .last{
+        justify-content:center;
+    }
+}
+
+@media only screen and (max-width: 515px){
 }
