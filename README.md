@@ -1,7 +1,7 @@
 # squid-game
 - A responsive web landing page of squid game.
 
-    Live Link :: [Go Live](https://iamnaeto.github.io/animated-profile-card/)
+    Live Link :: [Go Live](https://iamnaeto.github.io/squid-game/)
     
 ## Author: Charles Obimnaeto Egesionu ##
 
