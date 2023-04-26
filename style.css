@@ -21,12 +21,18 @@ nav {
   justify-content: space-between;
   margin: 15px 0;
 }
-.menu a {
+.menu-bar{
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+}
+.nav-links a {
   color: #fff;
   padding: 0 15px;
 }
-.menu a:hover {
-  color: #e7e3e3f1;
+.nav-links a:hover {
+  color: #141c95;
 }
 .btn {
   background: linear-gradient(90deg, #eb1656 28.48%, #ae1b76 72.96%);
@@ -34,9 +40,14 @@ nav {
   padding: 15px 30px;
   color: #ffff;
   border-color: linear-gradient(90deg, #eb1656 28.48%, #ae1b76 72.96%);
+  transition: 0.5s;
+}
+.menu-bar .btn{
+  margin-left: 6rem;
 }
 .btn:hover {
-  background: linear-gradient(90deg, #eb165691 28.48%, #ae1b76b2 72.96%);
+  background: transparent;
+  border: 2px solid #eb1656;
 }
 main {
   margin: 0px 10%;
@@ -95,11 +106,83 @@ footer .last {
 }
 
 @media only screen and (max-width: 891px) {
+  nav {
+    margin: 0;
+  }
   .bar {
     flex-direction: column;
   }
-  .menu {
+  .menu-bar{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+  }
+  .nav-links {
     margin-bottom: 20px;
+  }
+  
+  .hamburger-menu {
+    height: 30px;
+    width: 30px;
+    position: relative;
+    cursor: pointer;
+    padding: 1rem;
+    z-index: 2;
+  }
+
+  .ham-bar {
+    width: 70%;
+    height: 4px;
+    background-color: #eb1656;
+    border-radius: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.6s, opacity 0.8s, top 0.6s;
+  }
+
+  .bar-top {
+    top: 25%;
+  }
+  .bar-bottom {
+    top: 75%;
+  }
+  .hamburger-menu.active .bar-top {
+    transform: translate(-50%, -50%) rotate(-315deg);
+    top: 50%;
+  }
+  .hamburger-menu.active .bar-mid {
+    opacity: 0;
+  }
+  .hamburger-menu.active .bar-bottom {
+    transform: translate(-50%, -50%) rotate(-225deg);
+    top: 50%;
+  }
+  #nav-links {
+    position: fixed;
+    top: 0;
+    right: -75%;
+    height: 100vh;
+    width: 40%;
+    transition: right 0.5s;
+    background: #eb1656;
+    text-align: left;
+    z-index: 2;
+  }
+  #nav-links a {
+    padding: 50px 0px 0 20px;
+  }
+
+  #nav-links.active {
+    right: 0;
+  }
+  #nav-links a {
+    display: block;
+  }
+  .menu-bar .btn{
+    margin-left: 20rem;
   }
   .hero-sec {
     flex-direction: column;
@@ -118,11 +201,17 @@ footer .last {
   }
 }
 
+@media only screen and (max-width: 530px) {
+  .menu-bar .btn{
+    margin-left: 10rem;
+  }
+}
 @media only screen and (max-width: 515px) {
   .logo {
     width: 70px;
+    z-index: 3;
   }
-  .menu a {
+  .nav-links a {
     font-size: 12px;
   }
   .btn {
